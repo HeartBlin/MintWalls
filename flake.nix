@@ -5,46 +5,11 @@
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = import systems;
 
-      imports = [
-        inputs.pkgs-by-name-for-flake-parts.flakeModule
-        inputs.pre-commit-hooks.flakeModule
-      ];
-
-      perSystem = { config, pkgs, ... }: {
-        # Packages
-        pkgsDirectory = ./wallpapers;
-
-        # Checks
-        pre-commit = {
-          settings = {
-            excludes = [ "flake.lock" ];
-            hooks = {
-              deadnix = {
-                enable = true;
-                verbose = true;
-                fail_fast = true;
-              };
-
-              nixfmt-classic = {
-                enable = true;
-                verbose = true;
-                fail_fast = true;
-              };
-
-              statix = {
-                enable = true;
-                verbose = true;
-                fail_fast = true;
-              };
-            };
-          };
-        };
-
-        # DevShell
-        devShells.default = pkgs.mkShellNoCC {
-          name = "Nix";
-          buildInputs = config.pre-commit.settings.enabledPackages;
-          shellHook = config.pre-commit.installationScript;
+      imports = [ ./parts/checks.nix ./parts/devShell.nix ./parts/module.nix ];
+      perSystem = { pkgs, ... }: {
+        packages = {
+          Abstract = pkgs.callPackage ./wallpapers/Abstract { };
+          BetterSonoma = pkgs.callPackage ./wallpapers/BetterSonoma { };
         };
       };
     };
@@ -54,9 +19,6 @@
 
     flake-parts.url = "github:hercules-ci/flake-parts";
     flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
-
-    pkgs-by-name-for-flake-parts.url =
-      "github:drupol/pkgs-by-name-for-flake-parts";
 
     pre-commit-hooks.url = "github:cachix/git-hooks.nix";
     pre-commit-hooks.inputs = {
