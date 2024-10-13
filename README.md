@@ -65,7 +65,7 @@ Chosing the wallpaper gives you its palette and package
 
 They are generated with matugen, with this command: ```matugen image <image-path> --show-colors```
 
-The palette.nix files for each wallpaper are then populated manually, however, I do plan on making it automatic, or rather, easier
+The palette.nix file can be generate using the script from the /tools folder. Simply pass a path to a image to the script and it will give you the file
 
 ## 📜 License
 
