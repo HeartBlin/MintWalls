@@ -4,7 +4,7 @@ Personal wallpaper & color scheme flake.
 
 > [!CAUTION]
 > Highly idiotic and experimental, beware!
-> 
+>
 > While it works for my own flake, I haven't and will not test it for others!
 
 ## 🖼️ Wallpapers
@@ -65,7 +65,7 @@ Chosing the wallpaper gives you its palette and package
 
 They are generated with matugen, with this command: ```matugen image <image-path> --show-colors```
 
-The palette.nix file can be generate using the script from the /tools folder. Simply pass a path to a image to the script and it will give you the file
+The palette.nix file can be generate using the script from the ```tools``` folder. Simply pass a path to a image to the script and it will give you the file
 
 ## 📜 License
 
