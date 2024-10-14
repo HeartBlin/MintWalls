@@ -22,5 +22,14 @@ in {
   config.mintWalls = {
     wallpaperPkg = perSystem.config.packages.${config.mintWalls.wallpaper};
     palette = import ./${config.mintWalls.wallpaper}/palette.nix;
+
+    # This never changes
+    # Used mostly for my system flake
+    defaultPalette = {
+      borderBlue = "089AFF";
+      borderViolet = "C26EFC";
+      borderRed = "FA5B59";
+      borderOrange = "FEA509";
+    };
   };
 }
