@@ -17,6 +17,7 @@ in {
     };
 
     palette = mkOption { type = attrsOf str; };
+    defaultPallete = mkOption { type = attrsOf str; };
   };
 
   config.mintWalls = {
