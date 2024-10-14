@@ -6,7 +6,7 @@ let
 in {
   options.mintWalls = {
     wallpaper = mkOption {
-      type = enum [ "Abstract" "BetterSonoma" ];
+      type = enum [ "Abstract" "BetterSonoma" "Soda" ];
       default = "Abstract";
       description = "The wallpaper to use";
     };

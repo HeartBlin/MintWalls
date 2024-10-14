@@ -10,6 +10,7 @@
         packages = {
           Abstract = pkgs.callPackage ./wallpapers/Abstract { };
           BetterSonoma = pkgs.callPackage ./wallpapers/BetterSonoma { };
+          Soda = pkgs.callPackage ./wallpapers/Soda { };
         };
       };
     };
