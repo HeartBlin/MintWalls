@@ -14,23 +14,25 @@ in {
     wallpaperPkg = mkOption {
       type = path;
       description = "The wallpaper package to use";
+      default = perSystem.config.packages.${config.mintWalls.wallpaper};
+      readOnly = true;
     };
 
-    palette = mkOption { type = attrsOf str; };
-    defaultPalette = mkOption { type = attrsOf str; };
-  };
+    palette = mkOption {
+      type = attrsOf str;
+      default = import ./${config.mintWalls.wallpaper}/palette.nix;
+      readOnly = true;
+    };
 
-  config.mintWalls = {
-    wallpaperPkg = perSystem.config.packages.${config.mintWalls.wallpaper};
-    palette = import ./${config.mintWalls.wallpaper}/palette.nix;
-
-    # This never changes
-    # Used mostly for my system flake
-    defaultPalette = {
-      borderBlue = "089AFF";
-      borderViolet = "C26EFC";
-      borderRed = "FA5B59";
-      borderOrange = "FEA509";
+    defaultPalette = mkOption {
+      type = attrsOf str;
+      readOnly = true;
+      default = {
+        borderBlue = "089AFF";
+        borderViolet = "C26EFC";
+        borderRed = "FA5B59";
+        borderOrange = "FEA509";
+      };
     };
   };
 }
