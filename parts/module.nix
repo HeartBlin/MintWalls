@@ -9,7 +9,7 @@
     in {
       options.mintWalls = {
         wallpaper = mkOption {
-          type = enum [ "Abstract" "BetterSonoma" "Soda" ];
+          type = enum [ "Abstract" "BetterSonoma" "Black" "Soda" ];
           default = "Abstract";
           description = "The wallpaper to use";
         };
