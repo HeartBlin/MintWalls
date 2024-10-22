@@ -1,7 +1,6 @@
 { stdenvNoCC, fetchurl }:
 
 let hash = "sha256-46BhjyREEy/hls2waa2ZokfdO6shAoF9brGItb57p3g=";
-
 in stdenvNoCC.mkDerivation {
   name = "BetterSonoma";
   src = fetchurl {
@@ -12,9 +11,5 @@ in stdenvNoCC.mkDerivation {
   };
 
   phases = [ "installPhase" ];
-
-  outputHashMode = "flat";
-  outputHash = hash;
-
   installPhase = "cp $src $out";
 }

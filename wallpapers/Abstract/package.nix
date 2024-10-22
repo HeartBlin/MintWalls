@@ -1,7 +1,6 @@
 { stdenvNoCC, fetchurl }:
 
 let hash = "sha256-HL3mJOeF6UKXL3ymj9ZynzgZTUJgw/lsxq9Xhpe3A8A=";
-
 in stdenvNoCC.mkDerivation {
   name = "Abstract";
   src = fetchurl {
@@ -10,9 +9,5 @@ in stdenvNoCC.mkDerivation {
   };
 
   phases = [ "installPhase" ];
-
-  outputHashMode = "flat";
-  outputHash = hash;
-
   installPhase = "cp $src $out";
 }
