@@ -9,7 +9,6 @@
         ./parts/checks.nix
         ./parts/devShell.nix
         ./parts/module.nix
-        ./parts/overlay.nix
         ./parts/packages.nix
       ];
     };
