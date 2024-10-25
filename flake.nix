@@ -6,6 +6,7 @@
       systems = import systems;
 
       imports = [
+        ./lib
         ./parts/checks.nix
         ./parts/devShell.nix
         ./parts/module.nix
