@@ -1,6 +1,6 @@
-<h1> 🌿 MintWalls </h1>
+<h1> 🚨 ARCHIVED - MintWalls - ARCHIVED 🚨 </h1>
 
-Personal wallpaper & color scheme flake.
+I've incorporated this flake in my own system flake.
 
 > [!CAUTION]
 > Highly idiotic and experimental, beware!
